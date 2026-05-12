@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+# Environment variables (if you use them)
+.env
+.env.local
+
+# Build output (commonly used with build tools)
+dist/
+build/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
