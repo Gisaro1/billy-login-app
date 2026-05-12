@@ -1,0 +1,29 @@
+.body{
+    background-color: beige;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.container{
+    display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 100vh;
+}
+.container form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border: 1px solid #bd3030;
+    padding: 24px;
+    background-color: rgb(194, 163, 158);
+
+}
+.container input{
+    border-radius: 0.5rem;
+}
+.error {
+    display: block;
+}
+
+.error.hidden {
+    display: none;
+}
