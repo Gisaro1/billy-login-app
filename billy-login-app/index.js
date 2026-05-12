@@ -27,11 +27,7 @@ function reloadBoxes(){
 
 function removeVisibility() {
     const boxCount = document.querySelectorAll('.box').length;
-    if (boxCount > 0) {
-        removeBtn.classList.remove('hidden');
-    } else {
-        removeBtn.classList.add('hidden');
-    }
+    removeBtn.classList.toggle('hidden', boxCount <= 0); 
 }
 function addBox() {
     const box = document.createElement('div');
