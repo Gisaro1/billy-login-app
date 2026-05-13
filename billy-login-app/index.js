@@ -5,7 +5,7 @@ if(!storedUser){
     window.location.replace("login.html");
 }else{
     const user = JSON.parse(storedUser);
-    isAdmin = user.isAdmin === true;
+    isAdmin = user.isAdmin;
     document.getElementById('names').innerHTML = user.username;
 }
 const container = document.querySelector('.container');
