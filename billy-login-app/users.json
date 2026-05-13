@@ -1,16 +1,14 @@
 [
   {
-    "name": "John Doe",
+    "username": "JohnDoe",
     "email": "john@example.com",
     "password": "john123",
     "isAdmin": true
   },
   {
-    "name": "Jane Smith",
+    "username": "JaneSmith",
     "email": "jane@example.com",
     "password": "jane123",
     "isAdmin": false
   }
 ]
-
-//is admin  is allowed to add boxes 
