@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+     <script src="https://cdn.tailwindcss.com"></script>
     <title>New Page</title>
 </head>
-<body>
-    <h3>Welcome <span id="names"></span></h3>
-    <div class="btns">
-            <button class="addbox" onclick="addNewBox()">Add a BOX</button>
-            <button class="removebox hidden" onclick="removeBox()">Remove a BOX</button>
+<body class="bg-gray-950 min-h-screen p-8">
+    <div class="flex justify-between items-center bg-gray-800 p-4 rounded-xl mb-8">
+        <h3 class="text-white text-xl font-bold">Welcome <span id="names" class="text-green-400"></span></h3>
+    <div class="flex gap-4">
+            <button class="addbox bg-green-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-green-700" id="addBox" onclick="addNewBox()">Add a BOX</button>
+            <button class="removebox hidden bg-red-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-red-700" id="removeBtn" onclick="removeBox()">Remove a BOX</button>
         </div>
-    <div class="container">
+    </div>
+    <div class="container grid grid-cols-4 gap-4" id="container">
     </div>
 </body>
+<script src="index.js"></script>
 </html>
-
-<script src="index.js">
-
-</script>

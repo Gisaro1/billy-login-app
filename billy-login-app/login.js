@@ -7,7 +7,7 @@ fetch('users.json')
 
 const userName = document.getElementById('username')
 const passCode = document.getElementById('passcode')
-const errorContainer = document.querySelector('.error')
+const errorContainer = document.getElementById('errorContainer');
 
 function loginHandler(e) {
     e.preventDefault();

@@ -8,9 +8,9 @@ if(!storedUser){
     isAdmin = user.isAdmin;
     document.getElementById('names').innerHTML = user.username;
 }
-const container = document.querySelector('.container');
-const removeBtn = document.querySelector('.removebox');
-const addBox = document.querySelector('.addbox');
+const container = document.getElementById('container');
+const removeBtn = document.getElementById('removeBtn');
+const addBox = document.getElementById('addBox');
 
 if(!isAdmin){
     if(addBox) addBox.style.display = 'none';
@@ -38,7 +38,7 @@ function reloadBoxes(){
     allboxesExist.forEach(box => box.remove());
     savedboxes.forEach(boxText => {
         const box = document.createElement('div');
-        box.classList.add('box');
+        box.classList.add('box', 'bg-gray-800', 'text-white', 'p-6', 'rounded-xl', 'shadow-lg', 'text-center', 'text-2xl', 'font-bold');
         box.textContent = boxText;
         container.appendChild(box);
     });
@@ -48,7 +48,7 @@ function reloadBoxes(){
 function addNewBox() {
     if(!isAdmin) return;
     const box = document.createElement('div');
-    box.classList.add('box');
+    box.classList.add('box', 'bg-gray-800', 'text-white', 'p-6', 'rounded-xl', 'shadow-lg', 'text-center', 'text-2xl', 'font-bold' );
     box.textContent = container.children.length + 1;
     container.appendChild(box);
     saveBoxes();
@@ -62,3 +62,4 @@ function removeBox() {
     saveBoxes();
     removeVisibility();
 }
+reloadBoxes();
