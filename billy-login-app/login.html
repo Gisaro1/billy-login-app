@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
-    <link rel="stylesheet" href="login.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="container">
-        <div class="error hidden">
-            <span id="errorMessage"></span>
-            <button onclick="hideError()">Hide error</button>
+<body class="flex items-center justify-center bg-gray-950 font-sans min-h-screen">
+    <div class="bg-gray-500 p-8 rounded-xl shadow-lg w-96">
+        <div class="hidden bg-red-500 text-white p-3 rounded-lg mb-4 flex justify-between items-center" id="errorContainer">
+            <span id="error-message"></span>
+            <button onclick="hideError()" class="font-bold text-white ml-4">Hide error</button>
         </div>
-        <form onsubmit="loginHandler(event)">
-            <input type="text" placeholder="username" id="username">
-            <input type="password" placeholder="passcode" id="passcode">
+        <form onsubmit="loginHandler(event)" class="flex flex-col gap-4">
+            <input type="text" placeholder="username" id="username" class="bg-gray-700 text-white p-3 rounded-lg outline-none focus:ring-green-500">
+            <input type="password" placeholder="passcode" id="passcode" class="bg-blue-800 text-white font-bold p-3 rounded-lg hover:bg-blue-900">
             <button type="submit">Login</button>
         </form>
     </div>
