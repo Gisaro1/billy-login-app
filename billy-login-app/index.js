@@ -37,19 +37,45 @@ function reloadBoxes(){
     const allboxesExist = container.querySelectorAll('.box');
     allboxesExist.forEach(box => box.remove());
     savedboxes.forEach(boxText => {
+        boxCounter = Math.max(boxCounter,parseInt(boxText));
         const box = document.createElement('div');
         box.classList.add('box', 'bg-gray-800', 'text-white', 'p-6', 'rounded-xl', 'shadow-lg', 'text-center', 'text-2xl', 'font-bold');
         box.textContent = boxText;
+        box.addEventListener('click',()=>{
+        box.remove()
+        saveBoxes();
+        removeVisibility();
+    })
         container.appendChild(box);
     });
     removeVisibility();
 }
-
+function getNextNumber(){
+    const existingNumbers = Array.from(document.querySelectorAll('.box')).map(box => parseInt(box.textContent));
+   if(existingNumbers.length === 0) return 1
+   if(existingNumbers.length >= 9) return null
+   const max = Math.max(...existingNumbers)
+   if(max < 9) return max + 1
+   for(let i = 1; i <= 9; i++) {
+        if(!existingNumbers.includes(i)) {
+            return i
+        }
+    }
+   
+}
 function addNewBox() {
+    if(container.children.length >=9) return;
     if(!isAdmin) return;
     const box = document.createElement('div');
     box.classList.add('box', 'bg-gray-800', 'text-white', 'p-6', 'rounded-xl', 'shadow-lg', 'text-center', 'text-2xl', 'font-bold' );
-    box.textContent = container.children.length + 1;
+    const num = getNextNumber();
+    if(num === null) return;
+    box.textContent = num;
+    box.addEventListener('click',()=>{
+        box.remove()
+        saveBoxes();
+        removeVisibility();
+    })
     container.appendChild(box);
     saveBoxes();
     removeVisibility();

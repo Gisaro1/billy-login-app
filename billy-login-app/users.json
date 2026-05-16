@@ -1,13 +1,11 @@
 [
   {
     "username": "JohnDoe",
-    "email": "john@example.com",
     "password": "john123",
     "isAdmin": true
   },
   {
     "username": "JaneSmith",
-    "email": "jane@example.com",
     "password": "jane123",
     "isAdmin": false
   }
